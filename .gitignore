@@ -1,3 +1,16 @@
+# Custom
+3rdparty/
+*_local_*
+!data_store/renders/.gitkeep
+data_store/renders/*
+!data_store/blenders/.gitkeep
+data_store/blenders/*
+
+
+# ------------------------------------------
+# GitHub Python .gitignore ruleset
+# ------------------------------------------
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -8,13 +21,15 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+
+env/
 build/
 develop-eggs/
-dist/
+#dist/
 downloads/
 eggs/
 .eggs/
-lib/
+#lib/
 lib64/
 parts/
 sdist/
@@ -81,7 +96,7 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# Environment
 .env
 .venv
 env/
@@ -97,8 +112,68 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
-
 # mypy
 .mypy_cache/
+
+backend/backend/
+backend/media
+backend/static/*
+
+*.swp
+*.pkl
+
+.git-old/
+
+old-package.json
+
+*.tar
+
+.creds
+
+check/static/assets/js/dist/index.js
+static/public/user_content
+
+*.obj
+*.ply
+
+# google API key :-o
+.api_key
+
+site/datasets/final/*.csv
+
+flask.log
+flask.log.*
+
+*.sql
+
+.idea
+
+static/js/dev
+
+v1_search
+v1_common
+v1_frontend
+
+static/js/dev/*.hot-update.json
+static/js/dev/0.*
+
+etc
+
+static/js/dist
+
+!data_store/.gitkeep
+!data_store/incoming/.gitkeep
+!data_store/docker/.gitkeep
+!data_store/docker/mysql/.gitkeep
+!data_store/docker/redis/.gitkeep
+
+data_store/docker/mysql/
+data_store/docker/redis/
+data_store/media/
+data_store/models/
+data_store/indexes/
+data_store/exports/
+data_store/incoming/*
+data_store/uploads/
+data_store/features/
+

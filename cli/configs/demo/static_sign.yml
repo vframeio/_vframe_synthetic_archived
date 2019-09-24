@@ -1,0 +1,94 @@
+# Data generator config file
+
+# ---------------------------------------------------------------------------
+# Global
+# ---------------------------------------------------------------------------
+
+scene: 
+  name: danger_sign
+
+
+# ---------------------------------------------------------------------------
+# render settings
+# ---------------------------------------------------------------------------
+
+render:
+  save_real: True
+  save_mask: True
+  engine:
+    mask: eevee
+    # real: eevee  # for testing
+    real: cycles  # for production
+  dimensions:
+    width: 1920
+    height: 1080
+    scale: 0.25
+  output:
+    filepath: '/work/vframe_synthetic/data_store/renders/demo_danger_sign'  # absolute path
+    filename_prefix: ''  # eg vframe_01a, useful for differentiating multi-batches
+    file_format: PNG  # PNG, JPEG
+  color_management:
+    look: 'Filmic - Medium Contrast'  # 'Filmic - Medium Low Contrast'
+    # 'Filmic - Very High Contrast', 'Filmic - High Contrast', 
+    # 'Filmic - Medium High Contrast',
+    # 'Filmic - Medium Low Contrast', 'Filmic - Low Contrast', 'Filmic - Very Low Contrast'
+
+
+# ---------------------------------------------------------------------------
+# camera
+# ---------------------------------------------------------------------------
+
+camera:
+  views:
+    # cam 1
+    - target_name: camera_target
+      x_radius: 1.5
+      y_radius: 1.5
+      height: 0.2
+      frames: 10
+      zoom: 30  # lens mm
+      jitter_location: [0.0, 0.0, 0.0]
+      jitter_rotation: [0.0, 0.0, 0.0]
+      jitter_target: [0.0, 0.0, 0.0]
+
+
+# ---------------------------------------------------------------------------
+# world properties
+# ---------------------------------------------------------------------------
+
+world:
+  name: World
+  randomize_rotation: True
+  color: 0x000000  # in colorized annotation images
+
+
+# ---------------------------------------------------------------------------
+# ground objects
+# ---------------------------------------------------------------------------
+
+ground:
+  objects:
+    - name: plane_outer
+      color: 0x0000CC  # black or can colorize
+    - name: plane_inner
+      color: 0x0000FF  # black or can colorize
+
+
+# ---------------------------------------------------------------------------
+# static scene
+# ---------------------------------------------------------------------------
+
+static_system:
+  objects:
+    - name: danger_sign_dirty
+      trainable: True
+      material: mat_danger_sign_dirty
+      label: danger_sign
+      description: UXO Danger Sign, Arabic
+      label_index: 0
+    - name: rock
+      material: mat_rock
+      color: 0xFF0000
+    - name: tree
+      material: oli_bark2
+      color: 0x00FF00
