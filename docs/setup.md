@@ -14,7 +14,7 @@ See [blender-setup.md](blender-setup.md)
 
 ## Test
 
-Once you've installed the dependenices try running
+Once you've installed the dependencies try running
 
 ```
 cd cli
